@@ -1,0 +1,46 @@
+git clone < HTTP URL > -ls -cd kubernetes_jenkins_projet -ls - git config --global --list -git config --global user.name "Israyal" -git config --global user.email "israyallakkineti@gmail" -
+_____________________________
+vi dockerfile :------------------
+____________________________
+
+FROM centos:7
+MAINTAINER israyallakkineti@gmail.com
+RUN yum install -y httpd \
+zip\
+unzip
+ADD https://www.free-css.com/assets/files/free-css-
+templates/download/page254/photogenic.zip/var/www/html/
+WORKDIR/var/www/html/
+RUN unzip photogenic.zip
+RUN cp -rvf photogenic/*.
+RUN rm -rf photogenic photogenic.zip
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 80
+
+
+It looks like you're working on a Dockerfile for a CentOS-based web server using Apache HTTPD. Your script does the following:
+
+- Uses the CentOS 7 base image.
+- Installs required packages (httpd, zip, unzip).
+- Adds a zipped website template from an online source into /var/www/html/.
+- Changes the working directory to /var/www/html/.
+- Unzips the template.
+- Copies the contents of the extracted folder to /var/www/html/.
+- Cleans up unnecessary files and folders.
+- Runs the Apache server in the foreground.
+- Exposes port 80 for HTTP traffic
+
+--------> there are three stages for git: 	  Next Step
+						_______________
+- Working are/untracked area
+- Staging area/tracked area
+- local repository
+
+# git status   		----> which means Untracked Area
+# git add dockerfile    ----> Tracked Area
+# git commit -m "Modified the dockerfile"  
+# git push origin main    ----> branch name main/master
+
+
+Not continue to the project :----
+

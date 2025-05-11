@@ -1,0 +1,68 @@
+INSTALLATION OF SET UP ANSIBLE :----------------
+____________________________________
+
+https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu 
+
+installing Ansible on ubuntu ( click it )
+
+# installation system 
+apt update 
+
+# software installation
+apt install software-properties-common
+
+# add repository
+add-apt-repository --yes --update ppa:ansible/ansible
+
+# install ansible
+ apt install ansible
+
+# ansible version check
+ansible --version		
+
+Ansible also is ready ?
+__________________________________
+
+this is ansible server is responsible copy lot of files or lot of codes to the Jenkins server to the Kubernetes server also it is going to build your docker image and send the docker image send to the DockerHub. it means are ansible server docker packages also required. 
+
+anisible terminal looney :---
+
+INSTALLATION OF DOCKER :-----------
+_______________________________
+
+https://docs.docker.com/engine/install/ubuntu/ 
+
+# package installation
+
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+
+# docker official GCP key
+
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# setup repository
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# update my system
+apt-get update
+
+# snap using 
+snap install docker
+
+# Verify that the installation is successful by running the hello-world image
+docker run hello-world
+
+We have done the configuration by the Jenkins server and done by the ansible server we done by the ansible configuration & installation of docker.
+
+
+-------> Tack the new folder -name was (Kubernetes-project) - open and is (empty folder) -click the right button and add git bash terminal - pwd -ls -ltr (no there files.)
+
+-------> Open in your GitHub A/C -new repo -name (kubernetes_jenkins_projet) -public -add a README file -Create repository. -& HTTP url copy -goto git bash terminal -
+

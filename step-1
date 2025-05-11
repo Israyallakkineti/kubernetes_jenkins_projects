@@ -1,0 +1,49 @@
+Deployment of an application on a Kubernetes cluster using Jenkins CI/CD - REAL-TIME PROJECT
+
+First we need three server - 1. Jenkins server 2. Ansible server 3. Kubernetes cluster Server. [ am using to AWS environment and Operating system is Ubuntu. ]
+
+
+
+Go to AWS instance -Name (Jenkins-server) -Ubuntu -t2 medium -KeyPair -instances (2) -Launch instance -The 1 servers RENAME will be Ansible server.
+
+Jenkins-Server -IP address COPY - Using MOBAETREM -click Session -SSH -remote host (Paste public IP) -S/P (Ubuntu) -Click on Advances Settings -user Private key (click) -Add keypair -ok -Accept    >>>> The Ready for the mobaxtrem for terminal....
+
+INSTALLATION OF JENKINS :-----
+____________________________________
+
+
+# sudo su   Go to Official installation { https://www.jenkins.io/doc/book/installing/linux/#debianubuntu } 
+
+step 1. sudo apt update
+sudo apt install fontconfig openjdk-21-jre
+
+# version check 
+java -version
+
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian/jenkins.io-2023.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+
+# update the system
+apt-get update
+
+# install jenkins
+sudo apt-get install jenkins
+
+# status check the Jenkins 
+systemctl status jenkins
+
+# systemctl enable jenkins
+systemctl enable jenkins
+
+goto security -security group -Edit inbound rules -all traffic -anywhereip4 -save. [public IP address paste new website ex| 12.12.12:8080 ]
+
+cat /var/lib/jenkins/secrets/initialAdminPassword    - token will be generated copy and paste continue.
+
+Create First Admin User with details continue........... save & finish
+
+JENKINS IS READY - go to manage jenkins -plugins -available plugin -ssh agent click & install -restart jenkins - login jenkins is there {set up on agent}.
+
